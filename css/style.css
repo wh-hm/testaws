@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-size: 18px;
+	line-height: 1.5em;
+}
+
+.w1{
+	max-width: 450px;
+	margin: 0 auto;
+	
+}
+
+#zaseki{
+	margin-top: 3em;
+}
+
+#login{
+	text-align: center;
+}
+
+h1{
+	margin-bottom: 10em;
+}
+
+h2{
+	font-size: 1.5em;
+}
+
+.seki{
+	background: #000;
+	width: 50px;
+	height: 50px;
+	margin: 1em;
+}
+
+#sofachair{
+	width: 380px;
+	display: flex;
+	justify-content: space-around;
+	background: #3A6221;
+	
+}
+
+#sofa{
+	position: absolute;
+	top: -4.79em;
+	left: 21em;
+	background: #0785BF;
+	
+}
+
+#sofa .seki{
+	margin-bottom: 2em;
+}
+
+.right{
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 8em;
+	left: 12em;
+}
+
+#chair .seki{
+	margin-bottom: 2em;
+	border-radius: 25px;
+	
+}
+
+#chair{
+	background: #B13BA0;
+}
+
+#counter .seki{
+	margin-bottom: 2em;
+	
+}
+
+.seki2{
+	background: #fff;
+	width: 50px;
+	height: 50px;
+	margin: 1em;
+}
+
+#counter{
+	background: #A88283;
+	
+	position: absolute;
+	top: 25em;
+	left: 21em;
+}
+
+
