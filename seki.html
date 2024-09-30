@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無題ドキュメント</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="w1" id="zaseki">
+		<div id="test"></div>
+		<div id="sofachair">
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+				
+		</div>
+		<div class="right">
+			<div id="sofa" >
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			</div>
+		</div>
+		<div class="center">
+			<div id="chair">
+				<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			</div>
+		</div>
+		<div class="right">
+			<div id="counter">
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			<div class="seki isu"></div>
+			</div>
+		</div>
+		<div class="btn"><input type="button" onClick="color()"></div>
+	</div>
+	
+	
+	
+
+</body>
+	
+<script>
+	
+	var apiUrl = 'https://g8b4hwk0d9.execute-api.ap-northeast-1.amazonaws.com/testjson';
+	fetch(apiUrl)
+    .then(response => {
+        // レスポンスを処理するコード
+		if (!response.ok) {
+		  throw new Error(`${response.status} ${response.statusText}`);
+		}
+		return response.json();
+    })
+	.then(data => {
+		console.log(data);
+	})
+    .catch(error => {
+        // エラーハンドリング
+		console.error('データの取得中にエラーが発生しました:', error);
+    })
+	
+
+	function color(){
+		
+		var obj = document.getElementsByClassName("isu");
+		let a = document.getElementsByClassName("seki");
+		
+		
+		while(a.length != 0){
+			a = document.getElementsByClassName("seki")
+			a[0].className = "seki2";
+		}
+		
+		
+
+		
+		
+		
+	}
+	
+	
+
+</script>
+</html>
