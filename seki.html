@@ -57,11 +57,9 @@
 	
 	var apiUrl = 'https://p0aszh4fjh.execute-api.ap-northeast-1.amazonaws.com/gomijson';
 	
-	var opts = {
-		mode:'no-cors'
-	};
 	
-	fetch(apiUrl, opts)
+	
+	fetch(apiUrl)
   .then(response => {
     if (!response.ok) {
 		console.log(response);
