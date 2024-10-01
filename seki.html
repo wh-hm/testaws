@@ -55,24 +55,31 @@
 	
 <script>
 	
-	var apiUrl = 'https://g8b4hwk0d9.execute-api.ap-northeast-1.amazonaws.com/testjson';
-	fetch(apiUrl)
-    .then(response => {
-        // レスポンスを処理するコード
-		if (!response.ok) {
-		  throw new Error(`${response.status} ${response.statusText}`);
-		}
-		return response.json();
-    })
-	.then(data => {
-		console.log(data);
-	})
-    .catch(error => {
-        // エラーハンドリング
-		console.error('データの取得中にエラーが発生しました:', error);
-    })
+	var apiUrl = 'https://p0aszh4fjh.execute-api.ap-northeast-1.amazonaws.com/gomijson';
 	
+	var opts = {
+		mode:'no-cors'
+	};
+	
+	fetch(apiUrl, opts)
+  .then(response => {
+    if (!response.ok) {
+		console.log(response);
+      throw new Error('responseerror');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // レスポンスを処理するコード
+    console.log(data);
+  })
+  .catch(error => {
+    // エラー処理
+    console.error('エラーだよ:', error);
+  });
 
+
+/*
 	function color(){
 		
 		var obj = document.getElementsByClassName("isu");
@@ -85,12 +92,8 @@
 		}
 		
 		
-
-		
-		
-		
 	}
-	
+	*/
 	
 
 </script>
