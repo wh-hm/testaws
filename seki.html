@@ -9,89 +9,88 @@
 
 <body>
 	<div class="w1" id="zaseki">
-		<div id="test"></div>
-		<div id="sofachair">
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-				
+        <div class="col2">
+		<div class="col">
+		
+        <div id="sofachair">
+            <div class="seki" id="isu1"></div>
+            <div class="seki" id="isu2"></div>
+            <div class="seki" id="isu3"></div>
+            <div class="seki" id="isu4"></div>
+        </div>
 		</div>
-		<div class="right">
-			<div id="sofa" >
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
+		</div>
+		<div class="col3">
+			<div class="col" id="library">
+				<h3>本棚</h3>
+			</div>
+        
+			<div class="col">
+				<div id="chair">
+					<div class="seki" id="isu10"></div>
+					<div class="seki" id="isu11"></div>
+					<div class="seki" id="isu12"></div>
+					<div class="seki" id="isu13"></div>
+
+				</div>
+			</div>
+		<div class="col" id="sofa">
+            	<div class="seki" id="isu5"></div>
+				<div class="seki" id="isu6"></div>
+				<div class="seki" id="isu7"></div>
+				<div class="seki" id="isu8"></div>
+				<div class="seki" id="isu9"></div>
+            
+        </div>
+		</div>
+		<div class="col3">
+			<div class="col" id="eleve">
+				<h3>エレベーター</h3>
+
+			</div>
+			<div class="col">
+				<div id="counter">
+					<div class="seki" id="isu14"></div>
+					<div class="seki" id="isu15"></div>
+					<div class="seki" id="isu16"></div>
+					<div class="seki" id="isu17"></div>
+					
+
+				</div>
+			</div>
+		
+			<div class="col">
+				<div id="counter2">
+					<div class="seki" id="isu18"></div>
+					<div class="seki" id="isu19"></div>
+					<div class="seki" id="isu20"></div>
+					<div class="seki" id="isu21"></div>
+					<div class="seki" id="isu22"></div>
+					<div class="seki" id="isu23"></div>
+					<div class="seki" id="isu24"></div>
+					
+
+				</div>
 			</div>
 		</div>
-		<div class="center">
-			<div id="chair">
-				<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			</div>
+		
+        
+    </div>
+	<section  id="info" class="w1">
+		<div class="col">
+			<h2>現在のラウンジの人数</h2>
+			<div id="pepole"></div>
+			<p class="right">人</p>
 		</div>
-		<div class="right">
-			<div id="counter">
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			<div class="seki isu"></div>
-			</div>
-		</div>
-		<div class="btn"><input type="button" onClick="color()"></div>
-	</div>
+		<div class="btn">
+            <input type="button" onClick="color()" value="更新">
+        </div>
+	</section>
 	
 	
 	
 
 </body>
 	
-<script>
-	
-	var apiUrl = 'https://p0aszh4fjh.execute-api.ap-northeast-1.amazonaws.com';
-	
-	fetch(apiUrl)
-  .then(response => {
-    if (!response.ok) {
-		console.log(response);
-      throw new Error('responseerror');
-    }
-    return response.json();
-  })
-  .then(data => {
-    // レスポンスを処理するコード
-    console.log(data);
-  })
-  .catch(error => {
-    // エラー処理
-    console.error('エラーだよ:', error);
-  });
 
-/*
-
-	function color(){
-		
-		var obj = document.getElementsByClassName("isu");
-		let a = document.getElementsByClassName("seki");
-		
-		
-		while(a.length != 0){
-			a = document.getElementsByClassName("seki")
-			a[0].className = "seki2";
-		}
-		
-		
-	}
- */
-	
-	
-
-</script>
 </html>

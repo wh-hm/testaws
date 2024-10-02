@@ -1,0 +1,17 @@
+export const handler = async (event) => {
+  // TODO implement
+  
+  const body = {
+    "pepole":[1,1,0,0,0,0,1,0,1,0,0,0,1,1,0,1,0,0,1,1],
+    "sum":40
+  }
+  const response = {
+    statusCode: 200,
+     headers: {
+          "Access-Control-Allow-Origin": "*"
+     },
+    
+    body: JSON.stringify(body),
+  };
+  return response;
+};

@@ -7,13 +7,14 @@ body{
 }
 
 .w1{
-	max-width: 450px;
+	max-width: 500px;
 	margin: 0 auto;
 	
 }
 
 #zaseki{
 	margin-top: 3em;
+	border: #000 1px solid;
 }
 
 #login{
@@ -33,6 +34,19 @@ h2{
 	width: 50px;
 	height: 50px;
 	margin: 1em;
+	
+}
+
+.col3{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.col2{
+	display: flex;
+	justify-content: space-between;
+	
 }
 
 #sofachair{
@@ -40,47 +54,73 @@ h2{
 	display: flex;
 	justify-content: space-around;
 	background: #3A6221;
+	border-radius: 20px;
 	
 }
 
 #sofa{
-	position: absolute;
-	top: -4.79em;
-	left: 21em;
+	position: relative;
+	top: -86px;
+	left: 0;
+	padding: 0 0  1em 0;
 	background: #0785BF;
-	
+	margin-top: 0;
+	border-top: 1px #0785BF solid;
+	vertical-align: top;
 }
 
 #sofa .seki{
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 
-.right{
-	display: flex;
-	justify-content: flex-end;
-	position: relative;
+#sofa .seki2{
+	margin-bottom: 3em;
 }
 
-.center{
-	display: flex;
-	justify-content: center;
-	position: absolute;
-	top: 8em;
-	left: 12em;
-}
 
 #chair .seki{
 	margin-bottom: 2em;
 	border-radius: 25px;
 	
+	
 }
 
 #chair{
 	background: #B13BA0;
+	margin-top: 3em;
+	padding: 1.5em 0;
 }
 
-#counter .seki{
-	margin-bottom: 2em;
+
+#library{
+	background: #C5662E;
+	width: 8em;
+	margin-top: 3em;
+	height: 417px;
+}
+
+#library h3{
+	
+	font-size: 2em;
+	align-items: center;
+	writing-mode: vertical-rl;
+	margin: 3.2em auto 0 auto;
+	
+}
+
+#eleve{
+	background: #E71416;
+	width: 8em;
+	height: 300px;
+	margin: 1em 0 0 0;
+}
+
+#eleve h3{
+	
+	font-size: 2em;
+	align-items: center;
+	writing-mode: vertical-rl;
+	margin: 1em auto 0 auto;
 	
 }
 
@@ -93,10 +133,86 @@ h2{
 
 #counter{
 	background: #A88283;
-	
-	position: absolute;
-	top: 25em;
-	left: 21em;
+	height: 300px;
+	display: flex;
+	margin-top: 1em;
+	flex-direction: column;
 }
 
+#counter .seki{
+	width: 20px;
+	height: 20px;
+	margin: 1.5em 1em;
+}
 
+#counter2 .seki{
+	width: 20px;
+	height: 20px;
+	margin: 0.7em 1em 0.5em 1em;
+}
+
+#counter .seki2{
+	width: 20px;
+	height: 20px;
+	margin: 1.5em 1em;
+}
+
+#counter2 .seki2{
+	width: 20px;
+	height: 20px;
+	margin: 0.7em 1em 0.5em 1em;
+}
+#counter2{
+	background: #77791D;
+	height: 300px;
+	display: flex;
+	margin-top: 1em;
+	flex-direction: column;
+}
+
+#camera figure img{
+	max-width: 400px;
+}
+
+.slider{
+	margin: 0 auto;
+}
+
+ul{
+	display: flex;
+	justify-content: center;
+}
+
+ul li{
+	margin: 0 1em;
+}
+
+ul li a{
+	text-decoration: none;
+}
+
+input{
+	width: 5em;
+	height: 3em;
+}
+
+#info{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 3em;
+}
+#info .col .col{
+	margin-top: 0.5em;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#pepole{
+	margin-top: 0.5em;
+	font-size: 3em;
+	
+}
+
+.right{
+	margin-top: 2.5em;
+}

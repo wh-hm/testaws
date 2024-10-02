@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>みえるか</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+	
+<body>
+	<header>
+		<h1>みえるか</h1>
+		
+	
+	</header>
+	
+	<section id="login" class="w1">
+		<h2>ログイン</h2>
+		<form method="post" action="../mail.php">
+			<p>学籍番号を入力してください</p>
+			<input type="password" name="id" id="number" value="login">
+			<label id="error"></label>
+			<div class="btn">
+				 <input type="button" onClick="date()" value="送信">
+			</div>
+		</form>
+	</section>
+</body>
+<script>
+	function btn(){
+		
+		let element = document.getElementById('number');
+		var element2 = document.getElementById('error');
+		element2.innerHTML = "";
+		let login = "login";
+
+		if(element.value != login){
+
+			element2.innerHTML = "学籍番号が間違っています";
+
+		}else{
+			location.href = "seki2.html";
+		}
+	}
+	
+	function date(){
+		var dt = new Date();
+		let hours = dt.getHours();
+		let minutes = dt.getMinutes();
+		
+		if(9<= hours && hours <=19){
+			btn()
+			
+		}else if(hours == 8 && minutes >= 15){
+			btn()
+		}else if(hours == 19 && minutes <= 30){
+			btn()
+		}else{
+			location.href = "timeout.html";
+		}
+		
+	}
+	
+</script>
+</html>

@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>無題ドキュメント</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    	<div class="w1" id="zaseki">
+        <div class="col2">
+		<div class="col">
+		
+        <div id="sofachair">
+            <div class="seki" id="isu1"></div>
+            <div class="seki" id="isu2"></div>
+            <div class="seki" id="isu3"></div>
+            <div class="seki" id="isu4"></div>
+        </div>
+		</div>
+		</div>
+		<div class="col3">
+			<div class="col" id="library">
+				<h3>本棚</h3>
+			</div>
+        
+			<div class="col">
+				<div id="chair">
+					<div class="seki" id="isu10"></div>
+					<div class="seki" id="isu11"></div>
+					<div class="seki" id="isu12"></div>
+					<div class="seki" id="isu13"></div>
+
+				</div>
+			</div>
+		<div class="col" id="sofa">
+            	<div class="seki" id="isu5"></div>
+				<div class="seki" id="isu6"></div>
+				<div class="seki" id="isu7"></div>
+				<div class="seki" id="isu8"></div>
+				<div class="seki" id="isu9"></div>
+            
+        </div>
+		</div>
+		<div class="col3">
+			<div class="col" id="eleve">
+				<h3>エレベーター</h3>
+
+			</div>
+			<div class="col">
+				<div id="counter">
+					<div class="seki" id="isu14"></div>
+					<div class="seki" id="isu15"></div>
+					<div class="seki" id="isu16"></div>
+					<div class="seki" id="isu17"></div>
+					
+
+				</div>
+			</div>
+		
+			<div class="col">
+				<div id="counter2">
+					<div class="seki" id="isu18"></div>
+					<div class="seki" id="isu19"></div>
+					<div class="seki" id="isu20"></div>
+					<div class="seki" id="isu21"></div>
+					<div class="seki" id="isu22"></div>
+					<div class="seki" id="isu23"></div>
+					<div class="seki" id="isu24"></div>
+					
+
+				</div>
+			</div>
+		</div>
+		
+        
+    </div>
+	<section  id="info" class="w1">
+		<div class="col">
+			<h2>現在のラウンジの人数</h2>
+			<div class="col">
+			<div id="pepole"></div>
+			<p class="right">人</p>
+				</div>
+		</div>
+		<div class="btn">
+            <input type="button" onClick="color()" value="更新">
+        </div>
+	</section>
+
+
+    <script>
+		
+			
+        var apiUrl = 'https://6wfjyj8pdg.execute-api.ap-northeast-1.amazonaws.com/testgomi/';
+
+        var opts = {
+            mode: 'cors' // CORSを有効にする
+        };
+		
+		var pepole;
+		var sum;
+
+        fetch(apiUrl, opts)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+			
+				
+                return response.json();
+            })
+            .then(data => {
+                // レスポンスを処理するコード
+				pepole = data["pepole"];
+				sum = data["sum"]
+                console.log(pepole);
+				console.log(sum);
+				let sumpepole = document.getElementById("pepole");
+				sumpepole.innerHTML = sum;
+						for(let a = 0; a < 24; a ++){
+				let name = "isu" + (a + 1);
+				let id = document.getElementById(name);
+				
+				if(pepole[a] == 0){
+					id.className = "seki";
+				}else{
+					id.className = "seki2";
+				}
+				
+			}
+            })
+            .catch(error => {
+                // エラー処理
+                console.error('There was a problem with the fetch operation:', error);
+            });
+		
+		function color() {
+			
+			fetch(apiUrl, opts)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+			
+				
+                return response.json();
+            })
+            .then(data => {
+                // レスポンスを処理するコード
+				pepole = data["pepole"];
+				sum = data["sum"]
+				let sumpepole = document.getElementById("pepole");
+				sumpepole.innerHTML = sum;
+
+        
+			for(let a = 0; a < 26; a ++){
+				let name = "isu" + (a + 1);
+				let id = document.getElementById(name);
+				if(pepole[a] == 0){
+					id.className = "seki";
+				}else{
+					id.className = "seki2";
+				}
+				
+			}
+                console.log(pepole);
+				console.log(sum);
+            })
+            .catch(error => {
+                // エラー処理
+                console.error('There was a problem with the fetch operation:', error);
+            });
+			
+           	
+        }
+    </script>
+</body>
+</html>
